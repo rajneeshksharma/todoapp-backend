@@ -5,5 +5,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'WorldChat' });
 });
+// router.get('/msg',passport.authenticate('jwt',{session:false}),);
 
 module.exports = router;

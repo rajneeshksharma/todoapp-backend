@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var passport = require('passport');
 var cors = require('cors');
+var pass = require('./helpers/passport.jwt.middelware');
 
 var db = require('./db');
 
@@ -25,7 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/', indexRouter);
 app.use('/api/users', usersRouter);
-
+//passport
+app.use(passport.initialize());
+pass.configJWTStrategy();
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
