@@ -465,7 +465,7 @@ var ApiService = /** @class */ (function () {
         this.http = http;
         this.subject = new rxjs_BehaviorSubject__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](0);
         this.mysubject = this.subject.asObservable();
-        this.uri = 'https://dry-river-10752.herokuapp.com/api/';
+        this.uri = 'https://todo-appbyrk.herokuapp.com/api/';
     }
     ApiService.prototype.getUserId = function () {
         return this.subject.asObservable();
