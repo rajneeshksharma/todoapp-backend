@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var mongoose = require('mongoose');
-var uri =  process.env.MONGODB_URI || "mongodb://localhost/worldchat";
+var uri =  process.env.MONGODB_URI || "mongodb://root:root1234@ds133630.mlab.com:33630/todoapprk";
 var options = {
     user: '',
     pass: '',
