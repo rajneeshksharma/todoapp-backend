@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: true
+            
     },
     lastName: {
         type: String,
-        required: true
+        required: [true, 'lastName is required'],
     },
     email: {
         type: String,
@@ -28,5 +27,5 @@ const userSchema = new mongoose.Schema({
         default: "Local"
     }
 });
-const User = mongoose.model('users', userSchema);
+const User = mongoose.model('user', userSchema);
 module.exports = User;
