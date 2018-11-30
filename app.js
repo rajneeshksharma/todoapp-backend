@@ -30,6 +30,19 @@ app.use('/api/users', usersRouter);
 //passport
 app.use(passport.initialize());
 pass.configJWTStrategy();
+
+publicDir = process.argv[2] || __dirname + '/public/dist/todoapp-frontend',
+app.use(express.static(publicDir));
+app.use(express.static(path.join(__dirname, 'public/')));
+app.get('/', function (req, res) {
+res.sendFile(path.join(publicDir, "/index.html"));
+});
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(publicDir, "/index.html"));
+});
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
